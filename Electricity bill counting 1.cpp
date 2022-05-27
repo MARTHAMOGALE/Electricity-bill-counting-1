@@ -2,31 +2,33 @@
 //
 
 #include <iostream>
-using namespace std;
+#include <iomanip>
 
 int main() {
 	double Units, Bill;
 	int Fixedcharge = 110;
+	std::cout << std::fixed << std::showpoint;
+	std::cout << std::setprecision(2);
 
-	cout << " Enter the units you have used " << endl;
-	cin >> Units;
+	std::cout << " Enter the units you have used " << std::endl;
+	std::cin >> Units;
 
-	if (Units >= 150) {
-		Bill = Units + Fixedcharge * 5.50;
-		cout << " Your bill is equal to R " << Bill << endl;
+	if ( Units <= 150 ) {
+		Bill = Units * 5.50 + Fixedcharge;
+		std::cout << " Your bill is equal to R " << Bill;
 
 	}
-	else if (Units > 150 && Units <= 300) {
-		Bill = Fixedcharge + (150 * 5.50) + (Units - 150) * 6;
-		cout << " Y our bill is equal to R "<< Bill;
+	else if ( Units > 150 && Units <= 300 ) {
+		Bill = Fixedcharge + ( 150 * 5.50 ) + ( Units - 150 ) * 6;
+		std::cout << " Your bill is equal to R "<< Bill;
 	}
-	else if (Units > 300 && Units <= 500) {
-		Bill = Fixedcharge + (150 * 5.50) + (150 * 6) + (Units - 300) * 6.50;
-		cout << " Your bill is equal to R "<< Bill;
+	else if ( Units > 300 && Units <= 500 ) {
+		Bill = Fixedcharge + ( 150 * 5.50 ) + ( 150 * 6 ) + ( Units - 300 ) * 6.50;
+		std::cout << " Your bill is equal to R "<< Bill;
 	}
-	else if (Units > 500) {
-		Bill = Fixedcharge + (150 * 5.50) + (150 * 6) + (200 * 6.50) + (Units - 500) * 7.00;
-		cout << " Your bill is equal to R "<< Bill;
+	else if ( Units > 500 ) {
+		Bill = Fixedcharge + ( 150 * 5.50 ) + ( 150 * 6 ) + ( 200 * 6.50 ) + ( Units - 500 ) * 7.00;
+		std::cout << " Your bill is equal to R "<< Bill;
 	}
 
 	return 0;
